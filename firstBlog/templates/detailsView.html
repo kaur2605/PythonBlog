@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+{% block title %} {{ post.title}} {% endblock %}
+{% block content %}
+
+
+
+<div class="m-3 text-center">
+  <h1>{{ post.title}}</h1>
+  <small>{{ post.firstname}}</small>
+  <hr>
+
+  <br />
+  {{ post.body | safe}}
+
+<br>
+<br>
+<hr>
+<button class = "btn btn-success" > 
+<a href="{% url 'home' %}">Back  </a>
+
+</button>
+
+</div>
+
+
+
+{% endblock %}

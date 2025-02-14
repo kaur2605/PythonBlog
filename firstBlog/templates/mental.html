@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+
+<div class="m-3 ml-5">
+  <h1 class="text-center mb-2">Mental Health Blog</h1>
+  <h5 class="text-center mb-4">
+    Meditation, mindfulness, and self-improvement content. New articles
+    published every Tuesday and Thursday.
+  </h5>
+
+  <div class="d-flex flex-row row justify-content-around">
+    {% for post in object_list %}
+
+    <div class="card col-md-3 ml-2 w-50 mb-2 h-50">
+      <img class="img card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}" />
+      <div class="card-body">
+        <p>{{ post.date_time }}</p>
+        <h5 class="card-title">
+          <a href="{% url 'articalDetailsView' post.pk %}">
+            {{ post.title }}
+          </a>
+        </h5>
+        <h6 class="card-subtitle mb-2 text-black">{{ post.title_subtitle}}</h6>
+        <a href="#" class="card-link">Delete</a>
+        <a href="#" class="card-link">Edit</a>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}
