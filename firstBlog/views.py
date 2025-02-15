@@ -3,12 +3,13 @@ from django.views.generic import ListView, DetailView, CreateView
 from .models import Post, TechPost
 
 
-# def home(request):
-#     return render(request, 'home.html', {})
+def home(request):
+    return render(request, 'base.html', {})
 
 class HomeView(ListView):
     model= Post
     template_name = 'home.html'
+    
 
 
 class MentalView(ListView):
